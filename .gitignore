@@ -1,0 +1,15 @@
+# ROS 2 build artifacts
+ros_ws/build/
+ros_ws/install/
+ros_ws/log/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local/editor files
+.vscode/
+.idea/
+*.swp
+

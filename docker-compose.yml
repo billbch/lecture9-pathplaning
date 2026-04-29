@@ -1,6 +1,4 @@
-
 services:
-  # ROS 2 Jazzy + Gazebo Harmonic + PX4 Autopilot + NoVNC
   px4-sitl:
     build:
       context: .
@@ -11,14 +9,12 @@ services:
     stdin_open: true
     tty: true
     
-    # volumes:
-      # - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      # - /home/user/workspace:/root/workspace
+    volumes:
+      - ./ros_ws:/root/ros_ws  
+      - ./ros_ws/worlds/default.sdf:/root/PX4-Autopilot/Tools/simulation/gz/worlds/default.sdf
 
     environment:
       - DISPLAY=:1
-      # - DISPLAY=${DISPLAY}
-      # - PX4_GZ_WORLD=default
 
     ports:
       - "5901:5901"

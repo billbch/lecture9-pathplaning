@@ -1,0 +1,8 @@
+path_planner:
+  ros__parameters:
+    grid_size_x: 50.0
+    grid_size_y: 50.0
+    grid_size_z: 20.0
+    resolution: 0.5
+    min_altitude: 2.0
+    max_altitude: 15.0

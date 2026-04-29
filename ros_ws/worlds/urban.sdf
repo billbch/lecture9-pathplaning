@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <world name="urban">
+    <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type="adiabatic"/>
+    <scene>
+      <grid>false</grid>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <!-- Ground plane -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>500 500</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>500 500</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Edificio 1 -->
+    <model name="building_1">
+      <static>true</static>
+      <pose>15 15 5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>8 8 10</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>8 8 10</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.8 1</ambient>
+            <diffuse>0.3 0.3 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Edificio 2 -->
+    <model name="building_2">
+      <static>true</static>
+      <pose>30 10 7 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>6 6 14</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>6 6 14</size></box></geometry>
+          <material>
+            <ambient>0.8 0.3 0.3 1</ambient>
+            <diffuse>0.8 0.3 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Edificio 3 -->
+    <model name="building_3">
+      <static>true</static>
+      <pose>20 35 4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>10 6 8</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>10 6 8</size></box></geometry>
+          <material>
+            <ambient>0.3 0.8 0.3 1</ambient>
+            <diffuse>0.3 0.8 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Arbol 1 -->
+    <model name="tree_1">
+      <static>true</static>
+      <pose>10 25 2 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.3</radius><length>4</length></cylinder></geometry>
+        </collision>
+        <visual name="trunk">
+          <geometry><cylinder><radius>0.3</radius><length>4</length></cylinder></geometry>
+          <material><ambient>0.4 0.2 0.0 1</ambient></material>
+        </visual>
+        <collision name="foliage_col">
+          <pose>0 0 3 0 0 0</pose>
+          <geometry><sphere><radius>2.5</radius></sphere></geometry>
+        </collision>
+        <visual name="foliage">
+          <pose>0 0 3 0 0 0</pose>
+          <geometry><sphere><radius>2.5</radius></sphere></geometry>
+          <material><ambient>0.1 0.5 0.1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Arbol 2 -->
+    <model name="tree_2">
+      <static>true</static>
+      <pose>35 25 2 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.3</radius><length>4</length></cylinder></geometry>
+        </collision>
+        <visual name="trunk">
+          <geometry><cylinder><radius>0.3</radius><length>4</length></cylinder></geometry>
+          <material><ambient>0.4 0.2 0.0 1</ambient></material>
+        </visual>
+        <collision name="foliage_col">
+          <pose>0 0 3 0 0 0</pose>
+          <geometry><sphere><radius>2.5</radius></sphere></geometry>
+        </collision>
+        <visual name="foliage">
+          <pose>0 0 3 0 0 0</pose>
+          <geometry><sphere><radius>2.5</radius></sphere></geometry>
+          <material><ambient>0.1 0.5 0.1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Vehiculo 1 -->
+    <model name="vehicle_1">
+      <static>true</static>
+      <pose>25 20 0.5 0 0 0.5</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>4 2 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>4 2 1.5</size></box></geometry>
+          <material>
+            <ambient>0.8 0.6 0.0 1</ambient>
+            <diffuse>0.8 0.6 0.0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Persona 1 -->
+    <model name="person_1">
+      <static>true</static>
+      <pose>12 18 0.9 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.3</radius><length>1.8</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.3</radius><length>1.8</length></cylinder></geometry>
+          <material><ambient>0.9 0.7 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Sun -->
+    <light name="sun" type="directional">
+      <pose>0 0 100 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+      <cast_shadows>true</cast_shadows>
+    </light>
+
+    <!-- PX4 plugins -->
+    <plugin name="gz::sim::systems::Physics" filename="gz-sim-physics-system"/>
+    <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin name="gz::sim::systems::UserCommands" filename="gz-sim-user-commands-system"/>
+    <plugin name="gz::sim::systems::SceneBroadcaster" filename="gz-sim-scene-broadcaster-system"/>
+
+  </world>
+</sdf>
